@@ -1,0 +1,34 @@
+{
+  "name": "business-cards-api",
+  "version": "1.0.0",
+  "description": "Full-stack Business Cards API with Node.js, Express, MongoDB and JWT authentication",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "echo \"Linting code...\"",
+    "format": "echo \"Formatting code...\"",
+    "health": "curl http://localhost:3000/health",
+    "setup": "npm install && echo \"Setup complete!\"",
+    "clean": "rm -rf node_modules package-lock.json && npm install"
+  },
+  "keywords": ["nodejs", "express", "mongodb", "api", "jwt", "authentication", "business-cards", "crud"],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^8.0.3",
+    "bcryptjs": "^2.4.3",
+    "joi": "^17.11.0",
+    "jsonwebtoken": "^9.0.2",
+    "dotenv": "^16.3.1",
+    "morgan": "^1.10.0",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
+
+

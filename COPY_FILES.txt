@@ -1,0 +1,33 @@
+קבצים להעתיק ל-GitHub Desktop:
+
+📁 תיקיות:
+- controllers/
+- middleware/
+- models/
+- routes/
+- utils/
+
+📄 קבצים:
+- app.js
+- package.json
+- package-lock.json
+- README.md
+- postman-examples.md
+- GITHUB_SETUP.md
+- QUICK_START.md
+- DEPLOYMENT_CHECKLIST.md
+- GITHUB_DESKTOP_GUIDE.md
+- .gitignore
+
+❌ אל תעתיק:
+- config.env (מידע רגיש)
+- node_modules/ (תלויות)
+- logs/ (קבצי לוג)
+
+🎯 הוראות:
+1. פתח GitHub Desktop
+2. צור repository חדש בשם: business-cards-api
+3. העתק את הקבצים למעלה
+4. Commit עם הודעה: "Initial commit: Business Cards API"
+5. Publish repository
+
