@@ -13,7 +13,7 @@
     "setup": "npm install && echo \"Setup complete!\"",
     "clean": "rm -rf node_modules package-lock.json && npm install"
   },
-  "keywords": ["nodejs", "express", "mongodb", "api", "jwt", "authentication", "business-cards", "crud"],
+  "keywords": ["nodejs", "express", "expressjs", "mongodb", "mongoose", "bcryptjs", "joi", "dotenv", "morgan", "cors", "jwt", "authentication", "business-cards", "crud", "rest-api"],
   "author": "Your Name",
   "license": "MIT",
   "dependencies": {

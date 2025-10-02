@@ -37,12 +37,24 @@ API מלא לניהול כרטיסי עסק ומשתמשים, בנוי עם Node
 
 ## 🛠️ טכנולוגיות
 
-- **Backend**: Node.js + Express.js
-- **Database**: MongoDB + Mongoose
-- **Authentication**: JWT (JSON Web Tokens)
-- **Validation**: Joi
-- **Security**: bcrypt, helmet
-- **Logging**: Morgan + File logging
+### Core Technologies:
+- **Node.js** - Runtime environment
+- **Express.js** - Web framework
+- **MongoDB** - NoSQL database
+- **Mongoose** - MongoDB object modeling
+
+### Authentication & Security:
+- **JWT (jsonwebtoken)** - JSON Web Tokens for authentication
+- **bcryptjs** - Password hashing and encryption
+
+### Validation & Middleware:
+- **Joi** - Schema validation library
+- **dotenv** - Environment variables management
+- **Morgan** - HTTP request logger
+- **CORS** - Cross-Origin Resource Sharing
+
+### Development:
+- **nodemon** - Development server with auto-restart
 
 ## 📋 דרישות מערכת
 
