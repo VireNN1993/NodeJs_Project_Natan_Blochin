@@ -1,41 +1,41 @@
 # Business Cards API
 
-API מלא לניהול כרטיסי עסק ומשתמשים, בנוי עם Node.js, Express ו-MongoDB.
+A comprehensive REST API for managing business cards and users, built with Node.js, Express, and MongoDB.
 
-## 🚀 תכונות
+## 🚀 Features
 
-### משתמשים (Users)
-- ✅ רישום משתמש חדש
-- ✅ התחברות משתמש
-- ✅ קבלת פרטי משתמש
-- ✅ עדכון פרטי משתמש
-- ✅ שינוי סטטוס עסקי
-- ✅ מחיקת משתמש (עם מחיקת כל הכרטיסים שלו)
-- ✅ ניהול משתמשים (אדמין בלבד)
+### Users Management
+- ✅ User registration
+- ✅ User authentication
+- ✅ Get user profile
+- ✅ Update user profile
+- ✅ Change business status
+- ✅ Delete user (with all their cards)
+- ✅ Admin user management
 
-### כרטיסי עסק (Cards)
-- ✅ יצירת כרטיס עסקי
-- ✅ קבלת כל הכרטיסים (public)
-- ✅ קבלת כרטיס לפי ID
-- ✅ קבלת הכרטיסים שלי
-- ✅ עדכון כרטיס
-- ✅ מחיקת כרטיס
-- ✅ לייק לכרטיס
-- ✅ שינוי מספר עסקי (אדמין בלבד)
+### Business Cards Management
+- ✅ Create business card
+- ✅ Get all cards (public)
+- ✅ Get card by ID
+- ✅ Get my cards
+- ✅ Update card
+- ✅ Delete card
+- ✅ Like/unlike card
+- ✅ Change business number (admin only)
 
-### אבטחה
-- ✅ אימות JWT
-- ✅ הרשאות לפי תפקיד (משתמש רגיל, עסקי, אדמין)
-- ✅ הגנה על ניסיונות התחברות כושלים
-- ✅ הצפנת סיסמאות עם bcrypt
+### Security
+- ✅ JWT authentication
+- ✅ Role-based authorization (regular, business, admin)
+- ✅ Protection against failed login attempts
+- ✅ Password encryption with bcrypt
 
-### ולידציה
-- ✅ ולידציה מלאה של כל השדות
-- ✅ הודעות שגיאה ברורות בעברית
-- ✅ בדיקת טלפון ישראלי
-- ✅ בדיקת אימייל תקין
+### Validation
+- ✅ Complete field validation
+- ✅ Clear error messages
+- ✅ Israeli phone number validation
+- ✅ Email format validation
 
-## 🛠️ טכנולוגיות
+## 🛠️ Technologies
 
 ### Core Technologies:
 - **Node.js** - Runtime environment
@@ -56,27 +56,27 @@ API מלא לניהול כרטיסי עסק ומשתמשים, בנוי עם Node
 ### Development:
 - **nodemon** - Development server with auto-restart
 
-## 📋 דרישות מערכת
+## 📋 System Requirements
 
-- Node.js (גרסה 14 ומעלה)
-- MongoDB (גרסה 4.4 ומעלה)
-- npm או yarn
+- Node.js (version 14 or higher)
+- MongoDB (version 4.4 or higher)
+- npm or yarn
 
-## 🚀 התקנה והפעלה
+## 🚀 Installation and Setup
 
-### 1. שכפול הפרויקט
+### 1. Clone the repository
 ```bash
 git clone https://github.com/VireNN1993/NodeJs_Project_Natan_Blochin.git
 cd NodeJs_Project_Natan_Blochin
 ```
 
-### 2. התקנת תלויות
+### 2. Install dependencies
 ```bash
 npm install
 ```
 
-### 3. הגדרת משתני סביבה
-צור קובץ `config.env` עם ההגדרות הבאות:
+### 3. Environment configuration
+Create a `config.env` file with the following settings:
 
 ```env
 # Environment Configuration
@@ -97,174 +97,170 @@ ALLOWED_ORIGINS=http://localhost:3000,http://localhost:3001
 LOG_FILE_PATH=./logs/error.log
 ```
 
-### 4. הפעלת MongoDB
-ודא ש-MongoDB רץ על הפורט 27017
+### 4. Start MongoDB
+Make sure MongoDB is running on port 27017
 
-### 5. הפעלת השרת
+### 5. Start the server
 ```bash
 npm start
-# או
+# or
 node app.js
 ```
 
-השרת יופעל על `http://localhost:3000`
+The server will run on `http://localhost:3000`
 
 ## 📚 API Endpoints
 
-### משתמשים (Users)
+### Users
 
 | Method | Endpoint | Description | Access |
 |--------|----------|-------------|--------|
-| POST | `/users/register` | רישום משתמש חדש | Public |
-| POST | `/users/login` | התחברות משתמש | Public |
-| GET | `/users/me` | קבלת פרטי המשתמש הנוכחי | Private |
-| PUT | `/users/me` | עדכון פרטי המשתמש | Private |
-| PATCH | `/users/me/business` | שינוי סטטוס עסקי | Private |
-| GET | `/users` | קבלת כל המשתמשים | Admin |
-| GET | `/users/:id` | קבלת משתמש לפי ID | Self/Admin |
-| PUT | `/users/:id` | עדכון משתמש | Self/Admin |
-| DELETE | `/users/:id` | מחיקת משתמש | Self/Admin |
+| POST | `/users/register` | Register new user | Public |
+| POST | `/users/login` | User login | Public |
+| GET | `/users/me` | Get current user profile | Private |
+| PUT | `/users/me` | Update current user | Private |
+| PATCH | `/users/me/business` | Change business status | Private |
+| GET | `/users` | Get all users | Admin |
+| GET | `/users/:id` | Get user by ID | Self/Admin |
+| PUT | `/users/:id` | Update user | Self/Admin |
+| DELETE | `/users/:id` | Delete user | Self/Admin |
 
-### כרטיסי עסק (Cards)
+### Business Cards
 
 | Method | Endpoint | Description | Access |
 |--------|----------|-------------|--------|
-| GET | `/cards` | קבלת כל הכרטיסים | Public |
-| GET | `/cards/:id` | קבלת כרטיס לפי ID | Public |
-| GET | `/cards/my-cards` | קבלת הכרטיסים שלי | Private |
-| POST | `/cards` | יצירת כרטיס חדש | Business |
-| PUT | `/cards/:id` | עדכון כרטיס | Owner/Admin |
-| PATCH | `/cards/:id` | לייק לכרטיס | Private |
-| DELETE | `/cards/:id` | מחיקת כרטיס | Owner/Admin |
-| PATCH | `/cards/:id/biz-number` | שינוי מספר עסקי | Admin |
+| GET | `/cards` | Get all cards | Public |
+| GET | `/cards/:id` | Get card by ID | Public |
+| GET | `/cards/my-cards` | Get my cards | Private |
+| POST | `/cards` | Create new card | Business |
+| PUT | `/cards/:id` | Update card | Owner/Admin |
+| PATCH | `/cards/:id` | Like/unlike card | Private |
+| DELETE | `/cards/:id` | Delete card | Owner/Admin |
+| PATCH | `/cards/:id/biz-number` | Change business number | Admin |
 
 ### Health Check
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | `/health` | בדיקת תקינות השרת |
+| GET | `/health` | Server health check |
 
-## 🔐 אימות והרשאות
+## 🔐 Authentication and Authorization
 
-### טיפוסי משתמשים
-- **משתמש רגיל**: יכול לנהל את הפרופיל שלו
-- **משתמש עסקי**: יכול ליצור ולנהל כרטיסי עסק
-- **אדמין**: גישה מלאה לכל הפונקציות
+### User Types
+- **Regular User**: Can manage their own profile
+- **Business User**: Can create and manage business cards
+- **Admin**: Full access to all features
 
-### שימוש ב-JWT
+### JWT Usage
 ```javascript
-// הוספת טוקן ל-header
+// Add token to header
 Authorization: Bearer <your-jwt-token>
 ```
 
-## 📝 דוגמאות שימוש
+## 📝 Usage Examples
 
-### רישום משתמש חדש
+### Register new user
 ```javascript
 POST /users/register
 {
   "name": {
-    "first": "יוסי",
-    "last": "כהן",
+    "first": "John",
+    "last": "Doe",
     "middle": ""
   },
   "phone": "0501234567",
-  "email": "yossi@example.com",
+  "email": "john@example.com",
   "password": "1234567",
   "address": {
-    "country": "ישראל",
-    "city": "תל אביב",
-    "street": "דיזנגוף",
+    "country": "Israel",
+    "city": "Tel Aviv",
+    "street": "Dizengoff",
     "houseNumber": 1,
     "zip": 12345
   }
 }
 ```
 
-### יצירת כרטיס עסקי
+### Create business card
 ```javascript
 POST /cards
 Authorization: Bearer <token>
 {
-  "title": "מסעדה טובה",
-  "subtitle": "אוכל טעים",
-  "description": "המסעדה הטובה ביותר בעיר",
+  "title": "Great Restaurant",
+  "subtitle": "Delicious Food",
+  "description": "The best restaurant in the city",
   "phone": "0509876543",
   "email": "restaurant@example.com",
   "web": "https://restaurant.com",
   "address": {
-    "country": "ישראל",
-    "city": "תל אביב",
-    "street": "אלנבי",
+    "country": "Israel",
+    "city": "Tel Aviv",
+    "street": "Allenby",
     "houseNumber": 10,
     "zip": 54321
   }
 }
 ```
 
-## 🧪 בדיקות
+## 🧪 Testing
 
-הפרויקט כולל בדיקות מקיפות לכל ה-endpoints:
+The project includes comprehensive testing for all endpoints:
 
-### בדיקות שבוצעו:
-- ✅ רישום והתחברות משתמשים
-- ✅ אימות והרשאות
-- ✅ יצירה ועדכון כרטיסים
-- ✅ ולידציה ושגיאות
-- ✅ ניהול משתמשים וסטטוסים
+### Tests performed:
+- ✅ User registration and authentication
+- ✅ Authentication and authorization
+- ✅ Card creation and updates
+- ✅ Validation and error handling
+- ✅ User management and status changes
 
-## 📁 מבנה הפרויקט
+## 📁 Project Structure
 
 ```
-├── controllers/          # לוגיקה עסקית
+├── controllers/          # Business logic
 │   ├── cardsController.js
 │   └── usersController.js
 ├── middleware/           # Middleware functions
-│   ├── auth.js          # אימות והרשאות
-│   ├── errorHandler.js  # טיפול בשגיאות
-│   ├── fileLogger.js    # רישום לקובץ
-│   └── validation.js    # ולידציה
-├── models/              # מודלים של MongoDB
+│   ├── auth.js          # Authentication and authorization
+│   ├── errorHandler.js  # Error handling
+│   ├── fileLogger.js    # File logging
+│   └── validation.js    # Validation
+├── models/              # MongoDB models
 │   ├── Card.js
 │   └── User.js
-├── routes/              # נתיבי API
+├── routes/              # API routes
 │   ├── cards.js
 │   └── users.js
-├── utils/               # פונקציות עזר
-│   └── initialData.js   # נתונים ראשוניים
-├── logs/                # קבצי לוג
-├── app.js               # קובץ השרת הראשי
-├── config.env           # משתני סביבה
-└── package.json         # תלויות הפרויקט
+├── utils/               # Utility functions
+│   └── initialData.js   # Initial data
+├── logs/                # Log files
+├── app.js               # Main server file
+├── config.env           # Environment variables
+└── package.json         # Project dependencies
 ```
 
-## 🔧 פיתוח
+## 🔧 Development
 
-### הרצה במצב פיתוח
+### Run in development mode
 ```bash
 npm run dev
 ```
 
-### יצירת נתונים ראשוניים
-השרת יוצר אוטומטית נתונים ראשוניים בהפעלה ראשונה:
+### Initial data
+The server automatically creates initial data on first startup:
 
-**משתמשים ראשוניים:**
-- `john@example.com` (משתמש רגיל) - סיסמה: `1234567`
-- `jane@example.com` (משתמש עסקי) - סיסמה: `1234567`
-- `admin@example.com` (אדמין) - סיסמה: `1234567`
+**Initial users:**
+- `john@example.com` (Regular user) - Password: `1234567`
+- `jane@example.com` (Business user) - Password: `1234567`
+- `admin@example.com` (Admin user) - Password: `1234567`
 
-**כרטיסים ראשוניים:**
-- Pizza Palace (על ידי Jane)
-- Coffee Corner (על ידי Jane)
-- Tech Solutions (על ידי Admin)
+**Initial cards:**
+- Pizza Palace (by Jane)
+- Coffee Corner (by Jane)
+- Tech Solutions (by Admin)
 
-## 📞 תמיכה
+## 📞 Support
 
-לשאלות ותמיכה, צור issue ב-GitHub repository.
+For questions and support, create an issue in the GitHub repository.
 
-## 📄 רישיון
+## 📄 License
 
-פרויקט זה מופץ תחת רישיון MIT.
-
-
-
-
+This project is distributed under the MIT License.
