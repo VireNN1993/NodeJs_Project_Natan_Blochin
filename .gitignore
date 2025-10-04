@@ -10,7 +10,7 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
-config.env
+# config.env - Keep this file for project configuration
 
 # Logs
 logs/
@@ -92,6 +92,8 @@ Thumbs.db
 
 # Uploads
 uploads/
+
+
 
 
 
