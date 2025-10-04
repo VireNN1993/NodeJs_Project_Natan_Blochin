@@ -66,8 +66,8 @@ API מלא לניהול כרטיסי עסק ומשתמשים, בנוי עם Node
 
 ### 1. שכפול הפרויקט
 ```bash
-git clone <repository-url>
-cd business-cards-api
+git clone https://github.com/VireNN1993/NodeJs_Project_Natan_Blochin.git
+cd NodeJs_Project_Natan_Blochin
 ```
 
 ### 2. התקנת תלויות
@@ -245,7 +245,17 @@ npm run dev
 ```
 
 ### יצירת נתונים ראשוניים
-השרת יוצר אוטומטית נתונים ראשוניים בהפעלה ראשונה.
+השרת יוצר אוטומטית נתונים ראשוניים בהפעלה ראשונה:
+
+**משתמשים ראשוניים:**
+- `john@example.com` (משתמש רגיל) - סיסמה: `1234567`
+- `jane@example.com` (משתמש עסקי) - סיסמה: `1234567`
+- `admin@example.com` (אדמין) - סיסמה: `1234567`
+
+**כרטיסים ראשוניים:**
+- Pizza Palace (על ידי Jane)
+- Coffee Corner (על ידי Jane)
+- Tech Solutions (על ידי Admin)
 
 ## 📞 תמיכה
 
